@@ -20,7 +20,7 @@ jobs:
     - name: Run presubmit checks
       run: |
         source ${{ matrix.environment-variables }}
-        if [[ "${BUILD_PACKAGES}" != "" ]]; then sudo apt-get update; sudo apt-get install ${BUILD_PACKAGES}; fi
+        if [[ "${BUILD_PACKAGES}" != "" ]]; then sudo apt-get update; sudo apt-get install ${BUILD_PACKAGES} python3; fi
         make -e presubmit
     - name: Run tests
       env:
